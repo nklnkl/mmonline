@@ -2,7 +2,7 @@ package com.ludussqare.mmonline.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.ludussqare.mmonline.Mmonline;
+import com.ludussquare.mmonline.Mmonline;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {

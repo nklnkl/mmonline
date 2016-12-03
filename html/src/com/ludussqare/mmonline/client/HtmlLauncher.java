@@ -3,7 +3,7 @@ package com.ludussqare.mmonline.client;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import com.ludussqare.mmonline.Mmonline;
+import com.ludussquare.mmonline.Mmonline;
 
 public class HtmlLauncher extends GwtApplication {
 
