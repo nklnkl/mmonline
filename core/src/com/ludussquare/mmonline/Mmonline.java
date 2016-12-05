@@ -17,7 +17,6 @@ public class Mmonline extends Game {
 	private float height = 240;
 	
 	// Create game camera and view.
-	private OrthographicCamera camera;
 	private Viewport view;
 	
 	private SplashScreen splashScreen;
@@ -27,11 +26,13 @@ public class Mmonline extends Game {
 	@Override
 	public void create () {
 		view = new FitViewport(width, height);
-		camera = new OrthographicCamera();
+		view.setCamera(new OrthographicCamera());
 		
-		splashScreen = new SplashScreen();
-		menuScreen = new MenuScreen();
-		playScreen = new PlayScreen();
+		splashScreen = new SplashScreen(this);
+		menuScreen = new MenuScreen(this);
+		playScreen = new PlayScreen(this);
+		
+		setScreen(splashScreen);
 	}
 
 	@Override
@@ -53,4 +54,28 @@ public class Mmonline extends Game {
 	public void dispose () {
 		super.dispose();
 	}
+
+	public SplashScreen getSplashScreen() {
+		return splashScreen;
+	}
+
+	public MenuScreen getMenuScreen() {
+		return menuScreen;
+	}
+
+	public PlayScreen getPlayScreen() {
+		return playScreen;
+	}
+	
+	public Viewport getView() {
+		return view;
+	}
+	public float getWidth () {
+		return width;
+	}
+	public float getHeight () {
+		return height;
+	}
+	
+	
 }

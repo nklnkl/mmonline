@@ -1,49 +1,20 @@
 package com.ludussquare.mmonline.screens;
 
-import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.ludussquare.mmonline.Mmonline;
 
-public class MenuScreen implements Screen {
+public class MenuScreen extends GameScreen {
+	
+	// Each screen will have its own stage.
+	private Stage stage;
 
-	@Override
-	public void show() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void render(float delta) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void pause() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void resume() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void hide() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void dispose() {
-		// TODO Auto-generated method stub
-
+	public MenuScreen(Mmonline game) {
+		super(game);
+		// TODO Auto-generated constructor stub
+		
+		// Get the viewport from game, and use it for stage.
+		stage = new Stage(game.getView());
 	}
 
 }

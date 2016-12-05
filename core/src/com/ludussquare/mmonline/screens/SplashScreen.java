@@ -1,49 +1,27 @@
 package com.ludussquare.mmonline.screens;
 
-import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.ludussquare.mmonline.Mmonline;
 
-public class SplashScreen implements Screen {
-
-	@Override
-	public void show() {
-		// TODO Auto-generated method stub
+public class SplashScreen extends GameScreen {
+	
+	// Background
+	private Image background;
+	
+	public SplashScreen(Mmonline game) {
+		super(game);
+		// TODO Auto-generated constructor stub
 		
+		// Set up textures and images.
+		setGraphics();
 	}
-
-	@Override
-	public void render(float delta) {
-		// TODO Auto-generated method stub
-		
+	
+	private void setGraphics () {
+		background = new Image(new Texture("splashBackground.jpg"));
+		background.setBounds(0, 0, game.getWidth(), game.getHeight());
+		stage.addActor(background);
 	}
-
-	@Override
-	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void pause() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void resume() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void hide() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void dispose() {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
+	
 }
