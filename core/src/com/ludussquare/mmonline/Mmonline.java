@@ -6,6 +6,9 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.ludussquare.mmonline.screens.MenuScreen;
+import com.ludussquare.mmonline.screens.PlayScreen;
+import com.ludussquare.mmonline.screens.SplashScreen;
 
 public class Mmonline extends Game {
 	
@@ -17,10 +20,18 @@ public class Mmonline extends Game {
 	private OrthographicCamera camera;
 	private Viewport view;
 	
+	private SplashScreen splashScreen;
+	private MenuScreen menuScreen;
+	private PlayScreen playScreen;
+	
 	@Override
 	public void create () {
 		view = new FitViewport(width, height);
 		camera = new OrthographicCamera();
+		
+		splashScreen = new SplashScreen();
+		menuScreen = new MenuScreen();
+		playScreen = new PlayScreen();
 	}
 
 	@Override
