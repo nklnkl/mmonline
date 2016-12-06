@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.ludussquare.mmonline.screens.ExitScreen;
+import com.ludussquare.mmonline.screens.GameScreen;
 import com.ludussquare.mmonline.screens.LoginScreen;
 import com.ludussquare.mmonline.screens.MenuScreen;
 import com.ludussquare.mmonline.screens.PlayScreen;
@@ -23,6 +24,7 @@ public class Mmonline extends Game {
 	// Create game camera and view.
 	private Viewport view;
 	
+	// The defined screens of this game.
 	private SplashScreen splashScreen;
 	private MenuScreen menuScreen;
 	private PlayScreen playScreen;

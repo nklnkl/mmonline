@@ -1,11 +1,16 @@
+/*
+ * 
+ */
 package com.ludussquare.mmonline.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 import com.ludussquare.mmonline.Mmonline;
@@ -32,6 +37,16 @@ public abstract class GameScreen implements Screen {
 	// The accept sound.
 	private Sound acceptSound;
 	
+	// A back button listener every sub class can use.
+	// It inevitably calls a setScreen for the backScreen.
+	@SuppressWarnings("unused")
+	protected ClickListener backListener;
+	
+	// The screen this screen will go to if the backListener is invoked.
+	// This defaults to null and must be set by a sub class.
+	@SuppressWarnings("unused")
+	protected GameScreen backScreen;
+	
 	public GameScreen (Mmonline game) {
 		this.game = game;
 		
@@ -39,6 +54,8 @@ public abstract class GameScreen implements Screen {
 		stage = new Stage(game.getView());
 		
 		setAssets();
+		
+		setBackListener();
 		
 		setTransition();
 	}
@@ -54,6 +71,18 @@ public abstract class GameScreen implements Screen {
 		transitionDelay = 1f;
 		fadeInDelay = 0.25f;
 		timer = new Timer();
+	}
+	
+	private void setBackListener() {
+		backListener = new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				// TODO Auto-generated method stub
+				super.clicked(event, x, y);
+				// If a backScreen is defined, transition to it. Otherwise don't do anything.
+				if (backScreen != null) screenTransition(backScreen);
+			}
+		};
 	}
 	
 	protected void screenTransition(final Screen screen) {

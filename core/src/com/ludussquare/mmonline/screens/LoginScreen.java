@@ -17,15 +17,28 @@ public class LoginScreen extends GameScreen {
 	private Label usernameLabel, passwordLabel;
 	private TextButton loginButton, backButton;
 	private Table table;
+
+	private ClickListener loginListener;
 	
 	public LoginScreen(Mmonline game) {
 		super(game);
+		setListeners();
 		setGraphics();
 		setTable();
 	}
 	
+	private void setListeners() {
+		backScreen = game.getMenuScreen();
+		loginListener = new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				// TODO Auto-generated method stub
+				super.clicked(event, x, y);
+			}
+		};
+	}
+	
 	private void setGraphics() {
-		
 		background = new Image(new Texture("login/background.jpg"));
 		background.setBounds(0, 0, game.getWidth(), game.getHeight());
 		stage.addActor(background);
@@ -38,24 +51,10 @@ public class LoginScreen extends GameScreen {
 		passwordLabel = new Label("Password:", defaultSkin);
 		
 		loginButton = new TextButton("Login", defaultSkin);
+		loginButton.addListener(loginListener);
+		
 		backButton = new TextButton("Go Back", defaultSkin);
-		
-		loginButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				// TODO Auto-generated method stub
-				super.clicked(event, x, y);
-			}
-		});
-		
-		backButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				// TODO Auto-generated method stub
-				super.clicked(event, x, y);
-				screenTransition(game.getMenuScreen());
-			}
-		});
+		backButton.addListener(backListener);
 	}
 	
 	private void setTable() {
