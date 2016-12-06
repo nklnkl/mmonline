@@ -66,6 +66,12 @@ public class Mmonline extends Game {
 	@Override
 	public void dispose () {
 		super.dispose();
+		splashScreen.dispose();
+		menuScreen.dispose();
+		playScreen.dispose();
+		loginScreen.dispose();
+		registerScreen.dispose();
+		exitScreen.dispose();
 	}
 
 	public SplashScreen getSplashScreen() {
