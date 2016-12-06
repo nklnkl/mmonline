@@ -37,7 +37,7 @@ public abstract class GameScreen implements Screen {
 		// Default transition values.
 		transitionState = 0;
 		transitionDelay = 1f;
-		fadeInDelay = 0.1f;
+		fadeInDelay = 0.25f;
 		timer = new Timer();
 	}
 	
@@ -66,6 +66,7 @@ public abstract class GameScreen implements Screen {
 	@Override
 	public void show() {
 		// TODO Auto-generated method stub
+		stage.addAction(Actions.fadeOut(0f));
 		stage.addAction(Actions.fadeIn(fadeInDelay));
 		
 		// Enable input on this screen's stage.

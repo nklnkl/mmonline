@@ -80,6 +80,14 @@ public class LoginScreen extends GameScreen {
 	}
 	
 	@Override
+	public void show() {
+		// TODO Auto-generated method stub
+		super.show();
+		usernameField.setText("");
+		passwordField.setText("");
+	}
+	
+	@Override
 	public void dispose() {
 		// TODO Auto-generated method stub
 		super.dispose();
