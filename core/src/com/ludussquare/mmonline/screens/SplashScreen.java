@@ -9,7 +9,6 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.ludussquare.mmonline.Mmonline;
@@ -55,7 +54,7 @@ public class SplashScreen extends GameScreen {
 	
 	private void setGraphics () {
 		// Background.
-		background = new Image(new Texture("splashBackground.jpg"));
+		background = new Image(new Texture("splash/background.jpg"));
 		background.setBounds(0, 0, game.getWidth(), game.getHeight());
 		stage.addActor(background);
 		

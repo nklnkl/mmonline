@@ -31,9 +31,9 @@ public class MenuScreen extends GameScreen {
 	}
 	
 	private void setGraphics() {
-		background = new Image(new Texture("menuBackground.jpg"));
+		background = new Image(new Texture("menu/background.jpg"));
 		background.setBounds(0, 0, game.getWidth(), game.getHeight());
-		skin = new Skin(Gdx.files.internal("menuSkin.json"));
+		skin = new Skin(Gdx.files.internal("menu/skin.json"));
 		stage.addActor(background);
 	}
 	
