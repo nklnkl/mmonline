@@ -1,10 +1,10 @@
 package com.ludussquare.mmonline.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -20,6 +20,8 @@ public class MenuScreen extends GameScreen {
 	private TextButton exitButton;
 	
 	private Table table;
+	
+	private Music music;
 
 	public MenuScreen(Mmonline game) {
 		super(game);
@@ -27,6 +29,7 @@ public class MenuScreen extends GameScreen {
 		setGraphics();
 		setButtons();
 		setTable();
+		music = Gdx.audio.newMusic(Gdx.files.internal("menu/music.wav"));
 	}
 	
 	private void setGraphics() {
@@ -84,9 +87,17 @@ public class MenuScreen extends GameScreen {
 	}
 	
 	@Override
+	public void show() {
+		// TODO Auto-generated method stub
+		super.show();
+		game.playScreenMusic(music);
+	}
+	
+	@Override
 	public void dispose() {
 		// TODO Auto-generated method stub
 		super.dispose();
+		music.dispose();
 	}
 
 }

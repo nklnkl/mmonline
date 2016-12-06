@@ -2,6 +2,7 @@ package com.ludussquare.mmonline.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -31,6 +32,8 @@ public class SplashScreen extends GameScreen {
 	// Label style to be used for labels.
 	private LabelStyle labelStyle;
 	
+	private Music music;
+	
 	public SplashScreen(Mmonline game) {
 		super(game);
 		// TODO Auto-generated constructor stub
@@ -40,6 +43,8 @@ public class SplashScreen extends GameScreen {
 		
 		// Set up textures and images.
 		setGraphics();
+		
+		music = Gdx.audio.newMusic(Gdx.files.internal("splash/music.wav"));
 	}
 	
 	private void setLabels () {
@@ -129,6 +134,7 @@ public class SplashScreen extends GameScreen {
 	public void show() {
 		// TODO Auto-generated method stub
 		super.show();
+		game.playScreenMusic(music);
 	}
 	
 	@Override
@@ -143,5 +149,6 @@ public class SplashScreen extends GameScreen {
 	public void dispose() {
 		// TODO Auto-generated method stub
 		super.dispose();
+		music.stop();
 	}
 }

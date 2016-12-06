@@ -2,6 +2,7 @@ package com.ludussquare.mmonline;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.viewport.FitViewport;
@@ -26,6 +27,9 @@ public class Mmonline extends Game {
 	private PlayScreen playScreen;
 	private LoginScreen loginScreen;
 	private RegisterScreen registerScreen;
+	
+	// The handler that should play music.
+	private Music music;
 	
 	@Override
 	public void create () {
@@ -77,8 +81,26 @@ public class Mmonline extends Game {
 		return loginScreen;
 	}
 	
-	public RegisterScreen getRegisterScreen () {
+	public RegisterScreen getRegisterScreen() {
 		return registerScreen;
+	}
+	
+	public Music getMusic() {
+		return music;
+	}
+	
+	public void setMusic(Music music) {
+		this.music = music;
+	}
+	
+	public void playScreenMusic(Music music) {
+		if (this.music != null) {
+			this.music.stop();
+			this.music.dispose();
+		}
+		setMusic(music);
+		this.music.setLooping(true);
+		this.music.play();
 	}
 	
 	public Viewport getView() {

@@ -2,6 +2,7 @@ package com.ludussquare.mmonline.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
@@ -28,15 +29,23 @@ public abstract class GameScreen implements Screen {
 	// The default skin ui.
 	protected Skin defaultSkin;
 	
+	// The accept sound.
+	private Sound acceptSound;
+	
 	public GameScreen (Mmonline game) {
 		this.game = game;
 		
-		setTransition();
-		
-		defaultSkin = new Skin(Gdx.files.internal("system/skin.json"));
-
 		// Get the viewport from game, and use it for stage.
 		stage = new Stage(game.getView());
+		
+		setAssets();
+		
+		setTransition();
+	}
+	
+	private void setAssets() {
+		defaultSkin = new Skin(Gdx.files.internal("system/skin.json"));
+		acceptSound = Gdx.audio.newSound(Gdx.files.internal("system/accept.mp3"));
 	}
 	
 	private void setTransition() {
@@ -48,6 +57,9 @@ public abstract class GameScreen implements Screen {
 	}
 	
 	protected void screenTransition(final Screen screen) {
+		// Play accept sound.
+		acceptSound.play();
+		
 		// Change state.
 		transitionState = 1;
 		
