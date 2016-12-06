@@ -14,26 +14,58 @@ import com.ludussquare.mmonline.Mmonline;
 
 public class MenuScreen extends GameScreen {
 
-	private Image background;
+	// Events
+	private ClickListener loginListener, registerListener, exitListener;
 	
+	// Graphics
+	private Image background;
 	private TextButton loginButton, registerButton, exitButton;
 	private Label title;
 	
+	// UI format
 	private Table table;
 	
+	// Audio
 	private Music music;
 
 	public MenuScreen(Mmonline game) {
 		super(game);
 		// TODO Auto-generated constructor stub
+		setListeners();
 		setGraphics();
 		setButtons();
 		setTable();
 		music = Gdx.audio.newMusic(Gdx.files.internal("menu/music.wav"));
 	}
 	
-	private void setGraphics() {
+	private void setListeners() {
+		loginListener = new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				// TODO Auto-generated method stub
+				super.clicked(event, x, y);
+				screenTransition(game.getLoginScreen());
+			}
+		};
+		registerListener = new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				// TODO Auto-generated method stub
+				super.clicked(event, x, y);
+				screenTransition(game.getRegisterScreen());
+			}
+		};
+		backListener = new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				// TODO Auto-generated method stub
+				super.clicked(event, x, y);
+				screenTransition(game.getExitScreen());
+			}
+		};
+	}
 	
+	private void setGraphics() {
 		background = new Image(new Texture("menu/background.jpg"));
 		background.setBounds(0, 0, game.getWidth(), game.getHeight());
 		stage.addActor(background);
@@ -41,35 +73,13 @@ public class MenuScreen extends GameScreen {
 	
 	private void setButtons() {
 		loginButton = new TextButton("Login", defaultSkin);
+		loginButton.addListener(loginListener);
+		
 		registerButton = new TextButton("Register", defaultSkin);
+		registerButton.addListener(registerListener);
+		
 		exitButton = new TextButton("Exit", defaultSkin);
-		
-		loginButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				// TODO Auto-generated method stub
-				super.clicked(event, x, y);
-				screenTransition(game.getLoginScreen());
-			}
-		});
-		
-		registerButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				// TODO Auto-generated method stub
-				super.clicked(event, x, y);
-				screenTransition(game.getRegisterScreen());
-			}
-		});
-		
-		exitButton.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				// TODO Auto-generated method stub
-				super.clicked(event, x, y);
-				screenTransition(game.getExitScreen());
-			}
-		});
+		exitButton.addListener(exitListener);
 	}
 	
 	private void setTable() {
