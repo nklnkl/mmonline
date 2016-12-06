@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.ludussquare.mmonline.screens.ExitScreen;
 import com.ludussquare.mmonline.screens.LoginScreen;
 import com.ludussquare.mmonline.screens.MenuScreen;
 import com.ludussquare.mmonline.screens.PlayScreen;
@@ -27,6 +28,7 @@ public class Mmonline extends Game {
 	private PlayScreen playScreen;
 	private LoginScreen loginScreen;
 	private RegisterScreen registerScreen;
+	private ExitScreen exitScreen;
 	
 	// The handler that should play music.
 	private Music music;
@@ -41,6 +43,7 @@ public class Mmonline extends Game {
 		playScreen = new PlayScreen(this);
 		loginScreen = new LoginScreen(this);
 		registerScreen = new RegisterScreen(this);
+		exitScreen = new ExitScreen(this);
 		
 		setScreen(splashScreen);
 	}
@@ -83,6 +86,10 @@ public class Mmonline extends Game {
 	
 	public RegisterScreen getRegisterScreen() {
 		return registerScreen;
+	}
+	
+	public ExitScreen getExitScreen() {
+		return exitScreen;
 	}
 	
 	public Music getMusic() {

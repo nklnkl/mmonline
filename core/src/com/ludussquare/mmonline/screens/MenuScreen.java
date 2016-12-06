@@ -67,7 +67,7 @@ public class MenuScreen extends GameScreen {
 			public void clicked(InputEvent event, float x, float y) {
 				// TODO Auto-generated method stub
 				super.clicked(event, x, y);
-				Gdx.app.exit();
+				screenTransition(game.getExitScreen());
 			}
 		});
 	}
