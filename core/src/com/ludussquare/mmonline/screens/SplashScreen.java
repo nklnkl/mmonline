@@ -23,14 +23,11 @@ public class SplashScreen extends GameScreen {
 	private Table titleTable;
 	
 	// Splash screen label elements.
-	private Label title, author1, author2, author3, pressToEnter;
+	private Label title, author1, author2, author3, pressToEnter, architect, uiEngineer, serverEngineer;
 	
 	// The alpha state of the pressToEnter label.
 	// 0. invisible state, 1: invisible > visible state, 2: visisble state, 3: visible state > invisible 
 	private float pressToEnterState;
-	
-	// Label style to be used for labels.
-	private LabelStyle labelStyle;
 	
 	private Music music;
 	
@@ -48,13 +45,23 @@ public class SplashScreen extends GameScreen {
 	}
 	
 	private void setLabels () {
-		labelStyle = new Label.LabelStyle(new BitmapFont(), Color.WHITE);
-		title = new Label("Mega-Man Online", labelStyle);
-		author1 = new Label("Niko Lagman", labelStyle);
-		author2 = new Label("Jimmy Chen", labelStyle);
-		author3 = new Label("Gabriel Batista", labelStyle);
-		pressToEnter = new Label("Press Enter", labelStyle); 
+		title = new Label("Mega-Man Online", defaultSkin);
+		author1 = new Label("Niko Lagman", defaultSkin);
+		author2 = new Label("Jimmy Chen", defaultSkin);
+		author3 = new Label("Gabriel Batista", defaultSkin);
+		architect = new Label("Project Architect", defaultSkin);
+		uiEngineer = new Label("UI Engineer", defaultSkin);
+		serverEngineer = new Label("Server Engineer", defaultSkin);
+		pressToEnter = new Label("Press Enter", defaultSkin); 
 		pressToEnterState = 0;
+
+		author1.setFontScale(0.75f);
+		author2.setFontScale(0.75f);
+		author3.setFontScale(0.75f);
+		architect.setFontScale(0.75f);
+		uiEngineer.setFontScale(0.75f);
+		serverEngineer.setFontScale(0.75f);
+		pressToEnter.setFontScale(0.75f);
 	}
 	
 	private void setGraphics () {
@@ -79,13 +86,20 @@ public class SplashScreen extends GameScreen {
 		titleTable.add().expandX();
 		
 		// next row
-		titleTable.row().padTop(80f);
+		titleTable.row().padTop(70f);
 		// Add authors to row.
-		titleTable.add(author1).expandX();
+		titleTable.add(uiEngineer).expandX();
+		titleTable.add(architect).expandX();
+		titleTable.add(serverEngineer).expandX();
+		
+		// next row
+		titleTable.row().padTop(10f);
+		// Add authors to row.
 		titleTable.add(author2).expandX();
+		titleTable.add(author1).expandX();
 		titleTable.add(author3).expandX();
 		
-		titleTable.row().padTop(80f);
+		titleTable.row().padTop(60f);
 		titleTable.add().expandX();
 		titleTable.add(pressToEnter).expandX();
 		titleTable.add().expandX();

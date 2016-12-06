@@ -5,6 +5,7 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -15,9 +16,8 @@ public class MenuScreen extends GameScreen {
 
 	private Image background;
 	
-	private TextButton loginButton;
-	private TextButton registerButton;
-	private TextButton exitButton;
+	private TextButton loginButton, registerButton, exitButton;
+	private Label title;
 	
 	private Table table;
 	
@@ -33,6 +33,7 @@ public class MenuScreen extends GameScreen {
 	}
 	
 	private void setGraphics() {
+	
 		background = new Image(new Texture("menu/background.jpg"));
 		background.setBounds(0, 0, game.getWidth(), game.getHeight());
 		stage.addActor(background);

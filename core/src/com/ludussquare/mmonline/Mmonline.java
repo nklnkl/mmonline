@@ -94,6 +94,10 @@ public class Mmonline extends Game {
 	}
 	
 	public void playScreenMusic(Music music) {
+		
+		// If the music instance is already playing, return early.
+		if (this.music == music) return;
+		
 		if (this.music != null) {
 			this.music.stop();
 			this.music.dispose();
