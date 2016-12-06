@@ -47,7 +47,7 @@ public class MenuScreen extends GameScreen {
 			public void clicked(InputEvent event, float x, float y) {
 				// TODO Auto-generated method stub
 				super.clicked(event, x, y);
-				screenTransition(game.getPlayScreen());
+				screenTransition(game.getLoginScreen());
 			}
 		});
 		
@@ -83,6 +83,13 @@ public class MenuScreen extends GameScreen {
 		table.add(registerButton).expandX().align(Align.left);
 		table.row().padBottom(20f);
 		table.add(exitButton).expandX().align(Align.left);
+	}
+	
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		super.dispose();
+		skin.dispose();
 	}
 
 }

@@ -15,7 +15,7 @@ public abstract class GameScreen implements Screen {
 	protected Timer timer;
 	
 	// The amount of time it takes before an activity is exited.
-	protected float transitionDelay;
+	protected float transitionDelay, fadeInDelay;
 	
 	// State of splash screen.
 	// 0: normal, 1: leaving, 2: left.
@@ -37,6 +37,7 @@ public abstract class GameScreen implements Screen {
 		// Default transition values.
 		transitionState = 0;
 		transitionDelay = 1f;
+		fadeInDelay = 0.1f;
 		timer = new Timer();
 	}
 	
@@ -65,6 +66,7 @@ public abstract class GameScreen implements Screen {
 	@Override
 	public void show() {
 		// TODO Auto-generated method stub
+		stage.addAction(Actions.fadeIn(fadeInDelay));
 		
 		// Enable input on this screen's stage.
 		Gdx.input.setInputProcessor(stage);
