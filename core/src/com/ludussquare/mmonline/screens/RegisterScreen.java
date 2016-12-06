@@ -1,6 +1,9 @@
 package com.ludussquare.mmonline.screens;
 
+import com.badlogic.gdx.Net.HttpResponse;
+import com.badlogic.gdx.Net.HttpResponseListener;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.net.HttpResponseHeader;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -9,6 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.ludussquare.mmonline.Mmonline;
+import com.ludussquare.mmonline.services.UsersService;
 
 public class RegisterScreen extends GameScreen {
 
@@ -19,27 +23,22 @@ public class RegisterScreen extends GameScreen {
 	private TextButton registerButton, backButton;
 	
 	// Event handlers/listeners
+	// The click listener for when the register button is clicked.
 	private ClickListener registerListener;
+	// The http listener for when the client gets a registration response from the server.
+	private HttpResponseListener registerResponseListener;
 	
 	// UI format
 	private Table table;
+	
+	private UsersService usersService;
 	
 	public RegisterScreen(Mmonline game) {
 		super(game);
 		setListeners();
 		setGraphics();
 		setTable();
-	}
-
-	private void setListeners() {
-		backScreen = game.getMenuScreen();
-		registerListener = new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				// TODO Auto-generated method stub
-				super.clicked(event, x, y);
-			}
-		};
+		usersService = new UsersService();
 	}
 	
 	private void setGraphics() {
@@ -106,6 +105,50 @@ public class RegisterScreen extends GameScreen {
 	public void dispose() {
 		// TODO Auto-generated method stub
 		super.dispose();
+	}
+	
+	private void setListeners() {
+		
+		// Set back screen.
+		backScreen = game.getMenuScreen();
+		
+		// Set listener for the register button click.
+		registerListener = new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				// TODO Auto-generated method stub
+				super.clicked(event, x, y);
+				
+				if (usernameField.getText() == confirmField.getText()) {
+					// Get fields and pass in. Use the register responseListener as the callback.
+					usersService.registerUser(usernameField.getText(), passwordField.getText(), registerResponseListener);
+					
+					// Open loading modal.
+				}
+			}
+		};
+		
+		// Set http response listener for registration.
+		registerResponseListener = new HttpResponseListener() {
+			
+			@Override
+			public void handleHttpResponse(HttpResponse httpResponse) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void failed(Throwable t) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void cancelled() {
+				// TODO Auto-generated method stub
+				
+			}
+		};
 	}
 
 }
