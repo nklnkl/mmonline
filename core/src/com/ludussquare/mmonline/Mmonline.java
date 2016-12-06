@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.ludussquare.mmonline.screens.LoginScreen;
 import com.ludussquare.mmonline.screens.MenuScreen;
 import com.ludussquare.mmonline.screens.PlayScreen;
+import com.ludussquare.mmonline.screens.RegisterScreen;
 import com.ludussquare.mmonline.screens.SplashScreen;
 
 public class Mmonline extends Game {
@@ -24,6 +25,7 @@ public class Mmonline extends Game {
 	private MenuScreen menuScreen;
 	private PlayScreen playScreen;
 	private LoginScreen loginScreen;
+	private RegisterScreen registerScreen;
 	
 	@Override
 	public void create () {
@@ -34,6 +36,7 @@ public class Mmonline extends Game {
 		menuScreen = new MenuScreen(this);
 		playScreen = new PlayScreen(this);
 		loginScreen = new LoginScreen(this);
+		registerScreen = new RegisterScreen(this);
 		
 		setScreen(splashScreen);
 	}
@@ -72,6 +75,10 @@ public class Mmonline extends Game {
 	
 	public LoginScreen getLoginScreen() {
 		return loginScreen;
+	}
+	
+	public RegisterScreen getRegisterScreen () {
+		return registerScreen;
 	}
 	
 	public Viewport getView() {

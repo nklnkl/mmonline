@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.Timer.Task;
 import com.ludussquare.mmonline.Mmonline;
@@ -24,10 +25,15 @@ public abstract class GameScreen implements Screen {
 	// Each screen will have its own stage.
 	protected Stage stage;
 	
+	// The default skin ui.
+	protected Skin defaultSkin;
+	
 	public GameScreen (Mmonline game) {
 		this.game = game;
 		
 		setTransition();
+		
+		defaultSkin = new Skin(Gdx.files.internal("system/skin.json"));
 
 		// Get the viewport from game, and use it for stage.
 		stage = new Stage(game.getView());
@@ -113,6 +119,7 @@ public abstract class GameScreen implements Screen {
 		// TODO Auto-generated method stub
 		stage.dispose();
 		stage.clear();
+		defaultSkin.dispose();
 	}
 	
 	public Stage getStage () {

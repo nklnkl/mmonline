@@ -14,7 +14,6 @@ import com.ludussquare.mmonline.Mmonline;
 public class MenuScreen extends GameScreen {
 
 	private Image background;
-	private Skin skin;
 	
 	private TextButton loginButton;
 	private TextButton registerButton;
@@ -33,14 +32,13 @@ public class MenuScreen extends GameScreen {
 	private void setGraphics() {
 		background = new Image(new Texture("menu/background.jpg"));
 		background.setBounds(0, 0, game.getWidth(), game.getHeight());
-		skin = new Skin(Gdx.files.internal("menu/skin.json"));
 		stage.addActor(background);
 	}
 	
 	private void setButtons() {
-		loginButton = new TextButton("Login", skin);
-		registerButton = new TextButton("Register", skin);
-		exitButton = new TextButton("Exit", skin);
+		loginButton = new TextButton("Login", defaultSkin);
+		registerButton = new TextButton("Register", defaultSkin);
+		exitButton = new TextButton("Exit", defaultSkin);
 		
 		loginButton.addListener(new ClickListener() {
 			@Override
@@ -56,7 +54,7 @@ public class MenuScreen extends GameScreen {
 			public void clicked(InputEvent event, float x, float y) {
 				// TODO Auto-generated method stub
 				super.clicked(event, x, y);
-				screenTransition(game.getPlayScreen());
+				screenTransition(game.getRegisterScreen());
 			}
 		});
 		
@@ -89,7 +87,6 @@ public class MenuScreen extends GameScreen {
 	public void dispose() {
 		// TODO Auto-generated method stub
 		super.dispose();
-		skin.dispose();
 	}
 
 }
