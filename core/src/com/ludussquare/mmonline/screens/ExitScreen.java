@@ -15,7 +15,7 @@ public class ExitScreen extends GameScreen {
 		super(game);
 		// TODO Auto-generated constructor stub
 		setGraphics();
-		exitDelay = 3f;
+		exitDelay = 2f;
 	}
 	
 	private void setGraphics() {

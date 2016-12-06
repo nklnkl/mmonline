@@ -82,6 +82,7 @@ public class LoginScreen extends GameScreen {
 		super.show();
 		usernameField.setText("");
 		passwordField.setText("");
+		stage.setKeyboardFocus(usernameField);
 	}
 	
 	@Override

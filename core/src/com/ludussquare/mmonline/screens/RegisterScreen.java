@@ -99,6 +99,7 @@ public class RegisterScreen extends GameScreen {
 		usernameField.setText("");
 		passwordField.setText("");
 		confirmField.setText("");
+		stage.setKeyboardFocus(usernameField);
 	}
 	
 	@Override

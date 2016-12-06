@@ -55,7 +55,7 @@ public class MenuScreen extends GameScreen {
 				screenTransition(game.getRegisterScreen());
 			}
 		};
-		backListener = new ClickListener() {
+		exitListener = new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				// TODO Auto-generated method stub
