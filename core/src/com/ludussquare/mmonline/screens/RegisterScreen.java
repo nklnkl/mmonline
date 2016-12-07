@@ -3,7 +3,6 @@ package com.ludussquare.mmonline.screens;
 import com.badlogic.gdx.Net.HttpResponse;
 import com.badlogic.gdx.Net.HttpResponseListener;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.net.HttpResponseHeader;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -50,12 +49,19 @@ public class RegisterScreen extends GameScreen {
 
 		// Set up fields and don't add to stage.
 		usernameLabel = new Label("Username:", defaultSkin);
+		
 		usernameField = new TextField("", defaultSkin);
+		
 		passwordLabel = new Label("Password:", defaultSkin);
+		
 		passwordField = new TextField("", defaultSkin);
+		passwordField.setPasswordCharacter('*');
 		passwordField.setPasswordMode(true);
+		
 		confirmLabel = new Label("Confirm Password:", defaultSkin);
+		
 		confirmField = new TextField("", defaultSkin);
+		confirmField.setPasswordCharacter('*');
 		confirmField.setPasswordMode(true);
 		
 		// Set up register button and its corresponding listener object.

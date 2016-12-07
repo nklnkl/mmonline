@@ -42,12 +42,15 @@ public class LoginScreen extends GameScreen {
 		background.setBounds(0, 0, game.getWidth(), game.getHeight());
 		stage.addActor(background);
 		
-		usernameField = new TextField("", defaultSkin);
-		passwordField = new TextField("", defaultSkin);
-		passwordField.setPasswordMode(true);
-		
 		usernameLabel = new Label("Username:", defaultSkin);
+		
+		usernameField = new TextField("", defaultSkin);
+		
 		passwordLabel = new Label("Password:", defaultSkin);
+		
+		passwordField = new TextField("", defaultSkin);
+		passwordField.setPasswordCharacter('*');
+		passwordField.setPasswordMode(true);
 		
 		loginButton = new TextButton("Login", defaultSkin);
 		loginButton.addListener(loginListener);
