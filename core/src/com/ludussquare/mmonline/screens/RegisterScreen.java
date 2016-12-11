@@ -125,7 +125,13 @@ public class RegisterScreen extends GameScreen {
 				// TODO Auto-generated method stub
 				super.clicked(event, x, y);
 				
-				if (usernameField.getText() == confirmField.getText()) {
+				System.out.println(passwordField.getText().length());
+				System.out.println(confirmField.getText().length());
+				
+				if (passwordField.getText() == confirmField.getText()) {
+					
+					System.out.println("Form validated. Submitting...");
+					
 					// Get fields and pass in. Use the register responseListener as the callback.
 					usersService.registerUser(usernameField.getText(), passwordField.getText(), registerResponseListener);
 					
@@ -140,7 +146,7 @@ public class RegisterScreen extends GameScreen {
 			@Override
 			public void handleHttpResponse(HttpResponse httpResponse) {
 				// TODO Auto-generated method stub
-				
+				game.setScreen(game.getMenuScreen());
 			}
 			
 			@Override
