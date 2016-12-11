@@ -8,12 +8,12 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.ludussquare.mmonline.screens.ExitScreen;
-import com.ludussquare.mmonline.screens.GameScreen;
 import com.ludussquare.mmonline.screens.LoginScreen;
 import com.ludussquare.mmonline.screens.MenuScreen;
 import com.ludussquare.mmonline.screens.PlayScreen;
 import com.ludussquare.mmonline.screens.RegisterScreen;
 import com.ludussquare.mmonline.screens.SplashScreen;
+import com.ludussquare.mmonline.services.Session;
 
 public class Mmonline extends Game {
 	
@@ -35,6 +35,9 @@ public class Mmonline extends Game {
 	// The handler that should play music.
 	private Music music;
 	
+	// Session id for a logged in user.
+	private Session session;
+	
 	@Override
 	public void create () {
 		view = new FitViewport(width, height);
@@ -46,6 +49,8 @@ public class Mmonline extends Game {
 		loginScreen = new LoginScreen(this);
 		registerScreen = new RegisterScreen(this);
 		exitScreen = new ExitScreen(this);
+		
+		session = new Session();
 		
 		setScreen(splashScreen);
 	}
@@ -107,7 +112,15 @@ public class Mmonline extends Game {
 	public void setMusic(Music music) {
 		this.music = music;
 	}
-	
+
+	public Session getSession() {
+		return session;
+	}
+
+	public void setSession(Session session) {
+		this.session = session;
+	}
+
 	public void playScreenMusic(Music music) {
 		
 		// If the music instance is already playing, return early.

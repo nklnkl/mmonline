@@ -18,20 +18,16 @@ public class UsersService extends HttpService {
 		
 		// Set up body content to be sent.
 		User user = new User();
-		user.username = username;
-		user.password = password;
+		user.setUsername(username);
+		user.setPassword(password);
 		request.setContent( gson.toJson(user) );
 		
 		Gdx.net.sendHttpRequest(request, listener);
+		
 	}
 	
 	public void deleteUser(String sessionToken, HttpResponseListener listener) {}
 	
 	public void updateUser(HttpResponseListener listener) {}
-	
-	private class User {
-		public String username;
-		public String password;
-	}
 	
 }

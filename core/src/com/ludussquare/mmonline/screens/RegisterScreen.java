@@ -1,9 +1,11 @@
 package com.ludussquare.mmonline.screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Net.HttpResponse;
 import com.badlogic.gdx.Net.HttpResponseListener;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -125,17 +127,19 @@ public class RegisterScreen extends GameScreen {
 				// TODO Auto-generated method stub
 				super.clicked(event, x, y);
 				
-				System.out.println(passwordField.getText().length());
-				System.out.println(confirmField.getText().length());
+				System.out.println("Registration button clicked.");
 				
-				if (passwordField.getText() == confirmField.getText()) {
+				if (passwordField.getText().equals(confirmField.getText())) {
 					
-					System.out.println("Form validated. Submitting...");
+					System.out.println("Passed form validation.");
 					
 					// Get fields and pass in. Use the register responseListener as the callback.
 					usersService.registerUser(usernameField.getText(), passwordField.getText(), registerResponseListener);
 					
-					// Open loading modal.
+					Gdx.input.setInputProcessor(null);
+					
+					stage.unfocusAll();
+					
 				}
 			}
 		};
@@ -145,7 +149,8 @@ public class RegisterScreen extends GameScreen {
 			
 			@Override
 			public void handleHttpResponse(HttpResponse httpResponse) {
-				// TODO Auto-generated method stub
+				System.out.println("Received http response.");
+				System.out.println(httpResponse.getStatus().getStatusCode());
 				game.setScreen(game.getMenuScreen());
 			}
 			

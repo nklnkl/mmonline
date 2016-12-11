@@ -112,7 +112,7 @@ public abstract class GameScreen implements Screen {
 
 	@Override
 	public void show() {
-		// TODO Auto-generated method stub
+		System.out.println("Screen: " + this.toString());
 		stage.addAction(Actions.fadeOut(0f));
 		stage.addAction(Actions.fadeIn(fadeInDelay));
 		

@@ -10,7 +10,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.google.gson.Gson;
 import com.ludussquare.mmonline.Mmonline;
+import com.ludussquare.mmonline.services.Session;
 import com.ludussquare.mmonline.services.SessionsService;
 
 public class LoginScreen extends GameScreen {
@@ -95,6 +97,8 @@ public class LoginScreen extends GameScreen {
 	
 	private void setListeners() {
 		
+		sessionsService =  new SessionsService();
+		
 		backScreen = game.getMenuScreen();
 		
 		loginListener = new ClickListener() {
@@ -114,8 +118,24 @@ public class LoginScreen extends GameScreen {
 			
 			@Override
 			public void handleHttpResponse(HttpResponse httpResponse) {
-				// TODO Auto-generated method stub
 				
+				if (httpResponse.getStatus().getStatusCode() == 200) {
+					// Use gson for parsing.
+					Gson gson = new Gson();
+					
+					// Get string body.
+					String body = httpResponse.getResultAsString();
+					
+					// Create session object from string body.
+					Session session = gson.fromJson(body, Session.class);
+					
+					// Save in Mmonline game
+					game.setSession(session);
+					
+					game.setScreen(game.getPlayScreen());
+				} else {
+					// "Wrong login credentials" logic here.
+				}
 			}
 			
 			@Override
