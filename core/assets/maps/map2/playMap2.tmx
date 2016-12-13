@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="130" height="13" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="NES - Mega Man - Cut Man Stage" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="6272" columns="98">
+  <image source="NES - Mega Man - Cut Man Stage.png" trans="000000" width="3358" height="2182"/>
+ </tileset>
+ <layer name="Background" width="130" height="13">
+  <data encoding="base64" compression="zlib">
+   eJztwzENAAAMA6CenX/D1bAfEnpJVVVVVVVV9XnUEHA7
+  </data>
+ </layer>
+ <layer name="Ground/Wall" width="130" height="13">
+  <data encoding="base64" compression="zlib">
+   eJzt0sEJwDAQwLDSZ9buN0MXEzLFSeANvNfDcHudmM0HxAfEB8QHxAfEB8QHxAfEB+R+8L2a3P1A+gFXO5y9
+  </data>
+ </layer>
+ <layer name="Platform" width="130" height="13">
+  <data encoding="base64" compression="zlib">
+   eJzt1lEOgCAIgGGfvVD3v1nvbAYYJLT/23powxwgrjEAYO2a68caJ2M70PLR8qya+9/6FK1yLbw9kzFV86oioz5Pd2UnmXeF516Va6zvlr2Ar1jOtncu3sxR1BwwV9DsnG3vtzz7ndTl/6Bi7RCDvgIAMtw/gyhg
+  </data>
+ </layer>
+</map>

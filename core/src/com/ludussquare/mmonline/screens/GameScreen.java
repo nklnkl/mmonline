@@ -122,37 +122,30 @@ public abstract class GameScreen implements Screen {
 
 	@Override
 	public void render(float delta) {
-		// TODO Auto-generated method stub
-		
 		// Take all stage actors and run their update.
-		stage.act();
-		
-		// Then draw the actors.
+		stage.act();	
+		// Take all stage actors and draw.
 		stage.draw();
 	}
 
 	@Override
 	public void resize(int width, int height) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void pause() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void resume() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void hide() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override

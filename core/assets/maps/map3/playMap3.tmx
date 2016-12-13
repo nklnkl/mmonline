@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="130" height="13" tilewidth="32" tileheight="32" nextobjectid="51">
+ <tileset firstgid="1" name="SNES - Mega Man 7 - Slash Mans Stage Tiles" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="168" columns="12">
+  <image source="SNES - Mega Man 7 - Slash Mans Stage Tiles.png" width="412" height="484"/>
+ </tileset>
+ <layer name="Background" width="130" height="13">
+  <data encoding="base64" compression="zlib">
+   eJztlrsOglAQRLcSRSvxVYmvSny1ioXfwBfxaXyaE5fChhjnukixxcmVeGc4ySTGQkQKx3Ecx3Ecx/nATqSKccb6+dF23rqP6WQcLLzb3GhQfz8EI8IxNG/dx3QyDhbebW40BTMwBwviHaF56z6mk3Gw8LbeqC9SRqAH1njegK28fjO+fkdo3rqP6WQcLLyZ7rdtJdLnxvwE9xIw1lNO4AwuhOMxMG/dx3QyDhbeTPcK/wXqbSXRrRvzuFumYKmn3EAO7oTjNTBv3cd0Mg4W3kw3dq/qbSXVrRvzB9zLwB780tfpDthWMt367y5Od3kClkYC4A==
+  </data>
+ </layer>
+ <layer name="Ground/Wall" width="130" height="13">
+  <data encoding="base64" compression="zlib">
+   eJzt0rsNwCAQREEaoAeXQupf/+34NiBxA0j2jLQBFxG83vi73troqz/BcjogdEDogNABoQNCB4QOCB0QOiBmB3vtqJ21q3a7ffr2fs8Oapv9euMBjfJAjw==
+  </data>
+ </layer>
+ <layer name="Platform" width="130" height="13">
+  <data encoding="base64" compression="zlib">
+   eJzt1lEKgCAQRdFZiItpaS3NpWV/BYmKbyaUeyCEKEdfhpoBAGYks1yuo9b2PKusET0nr35m8vTKZRfk9labfyuXqP9Q3a8n1pS/kYxXzD9iDalqrJjvrYz5TI928N2v7PKqWURo7SG1+39kqj4feJ43FGfL3hqq+irssXvg+wEAdnMBNgZiOQ==
+  </data>
+ </layer>
+ <objectgroup name="Ground/Wall">
+  <object id="3" x="4129" y="1" width="32" height="415"/>
+  <object id="4" x="3246" y="359" width="879" height="56"/>
+  <object id="5" x="2560" y="359" width="685" height="55"/>
+  <object id="8" x="1656" y="359" width="903" height="58"/>
+  <object id="9" x="750" y="358" width="908" height="56"/>
+  <object id="10" x="0" y="358" width="752" height="59"/>
+  <object id="11" x="2" y="2" width="29" height="372"/>
+ </objectgroup>
+ <objectgroup name="Platform">
+  <object id="13" x="33" y="101" width="254" height="29"/>
+  <object id="14" x="31" y="230" width="259" height="26"/>
+  <object id="15" x="385" y="165" width="190" height="25"/>
+  <object id="16" x="354" y="260" width="255" height="26"/>
+  <object id="18" x="607" y="101" width="256" height="26"/>
+  <object id="19" x="865" y="197" width="191" height="27"/>
+  <object id="20" x="1089" y="99" width="193" height="27"/>
+  <object id="21" x="1088" y="262" width="194" height="24"/>
+  <object id="22" x="1375" y="101" width="257" height="29"/>
+  <object id="23" x="1503" y="258" width="130" height="32"/>
+  <object id="24" x="1664" y="197" width="193" height="28"/>
+  <object id="25" x="1888" y="262" width="66" height="27"/>
+  <object id="27" x="1888" y="134" width="127" height="27"/>
+  <object id="28" x="2081" y="132" width="127" height="29"/>
+  <object id="29" x="2239" y="196" width="67" height="29"/>
+  <object id="31" x="2113" y="258" width="194" height="29"/>
+  <object id="32" x="2335" y="133" width="128" height="28"/>
+  <object id="33" x="2495" y="69" width="259" height="28"/>
+  <object id="34" x="2495" y="226" width="67" height="29"/>
+  <object id="35" x="2591" y="292" width="67" height="28"/>
+  <object id="36" x="2688" y="228" width="64" height="26"/>
+  <object id="37" x="2848" y="67" width="193" height="29"/>
+  <object id="42" x="2880" y="228" width="126" height="27"/>
+  <object id="43" x="3102" y="131" width="65" height="27"/>
+  <object id="44" x="3105" y="260" width="129" height="26"/>
+  <object id="45" x="3232" y="164" width="194" height="27"/>
+  <object id="46" x="3296" y="65" width="257" height="34"/>
+  <object id="47" x="3585" y="165" width="64" height="27"/>
+  <object id="48" x="3713" y="191" width="127" height="32"/>
+  <object id="49" x="3872" y="101" width="259" height="31"/>
+  <object id="50" x="3872" y="227" width="257" height="29"/>
+ </objectgroup>
+</map>

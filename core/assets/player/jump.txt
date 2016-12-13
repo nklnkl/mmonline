@@ -1,0 +1,54 @@
+jump.png
+size: 176, 48
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+47febfd79d3f18e3a61c01aa806db753
+  rotate: false
+  xy: 1, 1
+  size: 24, 37
+  orig: 24, 37
+  offset: 0, 0
+  index: 22
+47febfd79d3f18e3a61c01aa806db753
+  rotate: false
+  xy: 27, 1
+  size: 15, 41
+  orig: 15, 41
+  offset: 0, 0
+  index: 23
+47febfd79d3f18e3a61c01aa806db753
+  rotate: false
+  xy: 44, 1
+  size: 19, 46
+  orig: 19, 46
+  offset: 0, 0
+  index: 24
+47febfd79d3f18e3a61c01aa806db753
+  rotate: false
+  xy: 65, 1
+  size: 23, 41
+  orig: 23, 41
+  offset: 0, 0
+  index: 25
+47febfd79d3f18e3a61c01aa806db753
+  rotate: false
+  xy: 90, 1
+  size: 27, 42
+  orig: 27, 42
+  offset: 0, 0
+  index: 26
+47febfd79d3f18e3a61c01aa806db753
+  rotate: false
+  xy: 119, 1
+  size: 24, 38
+  orig: 24, 38
+  offset: 0, 0
+  index: 27
+47febfd79d3f18e3a61c01aa806db753
+  rotate: false
+  xy: 145, 1
+  size: 30, 32
+  orig: 30, 32
+  offset: 0, 0
+  index: 28

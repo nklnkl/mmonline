@@ -109,8 +109,6 @@ public class LoginScreen extends GameScreen {
 				
 				// Send request to register session, and use class http listener.
 				sessionsService.registerSession(usernameField.getText(), passwordField.getText(), loginResponseListner);
-				
-				// Loading modal.
 			}
 		};
 		
@@ -129,8 +127,14 @@ public class LoginScreen extends GameScreen {
 					// Create session object from string body.
 					Session session = gson.fromJson(body, Session.class);
 					
+					// Save username
+					game.setUsername(usernameField.getText());
+					
 					// Save in Mmonline game
 					game.setSession(session);
+					
+					// Stop menu music.
+					game.getMusic().stop();
 					
 					game.setScreen(game.getPlayScreen());
 				} else {

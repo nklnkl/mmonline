@@ -38,6 +38,9 @@ public class Mmonline extends Game {
 	// Session id for a logged in user.
 	private Session session;
 	
+	// The user info.
+	private String username;
+	
 	@Override
 	public void create () {
 		view = new FitViewport(width, height);
@@ -121,6 +124,14 @@ public class Mmonline extends Game {
 		this.session = session;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	public void playScreenMusic(Music music) {
 		
 		// If the music instance is already playing, return early.
@@ -132,7 +143,7 @@ public class Mmonline extends Game {
 		}
 		setMusic(music);
 		this.music.setLooping(true);
-		this.music.play();
+		//this.music.play();
 	}
 	
 	public Viewport getView() {
